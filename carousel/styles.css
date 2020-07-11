@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center; /*Centralizar elementos com o grid*/
+  height: 100vh;
+}
+
+#items-wrapper {
+  width: 100vw;
+}
+
+#items,
+#newBehavior {
+  display: flex;
+  overflow-x: hidden; /*Faz com que o scroll fique emabaixo das imagens*/
+  scroll-snap-type: x mandatory;
+  /*Produz o efeito do reajuste automárico quando solta o scroll*/
+  -webkit-overflow-scrolling: touch;
+  /*Configuração para essa funcionalidade pegar em alguns navegadores*/
+  /*Faz com que o comportamento fique suave*/
+  scroll-behavior: smooth;
+}
+
+#newBehavior {
+  scroll-behavior: none;
+}
+
+.item {
+  flex: none; /*Tira o efeito flex*/
+  width: 100%;
+  height: 400px;
+  scroll-snap-align: start;
+  pointer-events: none; /*Desabilita o efeito de mouse na imagem*/
+}
+
+img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover; /*Faz com que a imagem se adapte ao espaço. Como se fosse o zoom*/
+}
