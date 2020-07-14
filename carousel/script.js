@@ -1,7 +1,7 @@
 var interval;
 var contador = 0;
 
-document.querySelector("#items").addEventListener("onload", (event) => {
+document.querySelector("#items").addEventListener("mouseover", (event) => {
   const images = document.querySelectorAll(".item");
 
   function transition() {
